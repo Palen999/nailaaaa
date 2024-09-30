@@ -58,8 +58,8 @@
         button {
             padding: 10px 20px;
             font-size: 18px;
-            background-color: #fff; /* Warna latar tombol putih */
-            color: black; /* Warna teks hitam */
+            background-color: #fff; /* Warna tombol putih */
+            color: black; /* Teks tombol berwarna hitam */
             border: none;
             border-radius: 5px;
             cursor: pointer;
@@ -67,33 +67,33 @@
         }
 
         button:hover {
-            background-color: #f0f0f0; /* Warna tombol saat hover */
+            background-color: #e0e0e0; /* Warna tombol saat hover */
         }
     </style>
 </head>
 <body>
     <h1>halo nailaaa semangat teruss yaa jangan lupa semangat ngejalanin hari hari</h1>
-    <div class="">🐱🐱</div>
+    <div class="heart">❤️</div>
     <p>semangat terussss Sayanggg kuuu</p>
-    <p>love youuu banyak banyak saya ng kuu maaff yaaa kalau alayy heheheheh gak jelas banget emang anak nyaaa</p>
-    
-    <!-- Tombol untuk menampilkan pesan dan gambar -->
+    <p>love youuu banyak banyak sayang kuu maaf yaaa kalau alayy heheheheh gak jelas banget emang anak nyaaa</p>
+
+    <!-- Tombol untuk menampilkan gambar dan teks -->
     <button id="showButton">Tampilkan Gambar</button>
     
-    <!-- Teks yang akan ditampilkan saat tombol ditekan -->
-    <p id="message" style="display: none;">pencet</p>
-    
-    <!-- Gambar yang akan ditampilkan saat tombol ditekan -->
-    <img src="Krem Aesthetic Kolase Foto Instagram Story_20241001_011636_0000.png" alt="Gambar Krem Aesthetic" id="imageToShow" />
+    <!-- Teks yang muncul setelah tombol ditekan -->
+    <p id="message" style="display: none;">Pencet</p>
 
-    <marquee behavior="scroll" direction="left">Lovee Youu!</marquee>
+    <!-- Menambahkan gambar Naila -->
+    <img id="nailaImage" src="naila.jpg" alt="Si Cantik" />
 
     <script>
-        // JavaScript untuk menampilkan pesan dan gambar saat tombol ditekan
+        // Menangani klik tombol
         document.getElementById('showButton').onclick = function() {
-            document.getElementById('message').style.display = 'block'; // Menampilkan pesan
-            document.getElementById('imageToShow').style.display = 'block'; // Menampilkan gambar
+            document.getElementById('message').style.display = 'block'; // Tampilkan pesan "Pencet"
+            document.getElementById('nailaImage').style.display = 'block'; // Tampilkan gambar
         };
     </script>
+
+    <marquee behavior="scroll" direction="left">Lovee Youu!</marquee>
 </body>
 </html>
