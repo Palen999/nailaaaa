@@ -52,6 +52,22 @@
             height: auto; /* Memastikan aspek rasio tetap */
             margin-top: 20px; /* Jarak atas gambar */
             border-radius: 8px; /* Sudut melingkar pada gambar */
+            display: none; /* Sembunyikan gambar secara default */
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #45a049; /* Warna tombol saat hover */
         }
     </style>
 </head>
@@ -60,10 +76,21 @@
     <div class="heart">❤️</div>
     <p>semangat terussss Sayanggg kuuu</p>
     
+    <!-- Menambahkan tombol -->
+    <button onclick="tampilkanGambar()">Tampilkan Gambar Naila</button>
+    
     <!-- Menambahkan gambar Naila -->
-    <img src="naila.jpg" alt="Si Cantik" />
+    <img id="gambarNaila" src="naila.jpg" alt="Si Cantik" />
     <p>Deskripsi: Si Cantik</p>
 
     <marquee behavior="scroll" direction="left">Lovee Youu!</marquee>
+
+    <script>
+        function tampilkanGambar() {
+            // Menampilkan gambar dengan mengubah gaya display
+            var gambar = document.getElementById("gambarNaila");
+            gambar.style.display = "block"; // Menampilkan gambar
+        }
+    </script>
 </body>
 </html>
