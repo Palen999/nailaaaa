@@ -58,8 +58,8 @@
         button {
             padding: 10px 20px;
             font-size: 18px;
-            background-color: #4CAF50;
-            color: white;
+            background-color: white; /* Warna latar belakang tombol */
+            color: black; /* Warna teks tombol */
             border: none;
             border-radius: 5px;
             cursor: pointer;
@@ -67,12 +67,29 @@
         }
 
         button:hover {
-            background-color: #45a049; /* Warna tombol saat hover */
+            background-color: #ddd; /* Warna tombol saat hover */
         }
     </style>
 </head>
 <body>
     <h1>halo nailaaa semangat teruss yaa jangan lupa semangat ngejalanin hari hari</h1>
-    <div class="">🐱🐱</div>
+    <div class="heart">🐱🐱</div>
     <p>semangat terussss Sayanggg kuuu</p>
-    <p>love youuu banyak banyak sayang kuu maaff yaaa kalau alayy heheheheh gak jelas banget emang anak nyaaa</p>
+    <p>love youuu banyak banyak saya ng kuu maaff yaaa kalau alayy heheheheh gak jelas banget emang anak nyaaa</p>
+    
+    <!-- Tombol untuk menampilkan gambar -->
+    <button id="showImageBtn">Tampilkan Gambar</button>
+    
+    <!-- Gambar Naila -->
+    <img id="nailaImage" src="naila.png" alt="Naila" />
+    
+    <marquee behavior="scroll" direction="left">Lovee Youu!</marquee>
+
+    <script>
+        // JavaScript untuk menampilkan gambar saat tombol ditekan
+        document.getElementById('showImageBtn').onclick = function() {
+            document.getElementById('nailaImage').style.display = 'block'; // Tampilkan gambar
+        };
+    </script>
+</body>
+</html>
