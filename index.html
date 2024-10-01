@@ -14,7 +14,7 @@
         }
 
         h1 {
-            font-size: 30px; /* Ukuran teks dibuat lebih kecil */
+            font-size: 30px;
             text-transform: uppercase;
             animation: blink 1.5s infinite;
         }
@@ -48,42 +48,69 @@
         }
 
         img {
-            max-width: 100%; /* Gambar responsif */
-            height: auto; /* Memastikan aspek rasio tetap */
-            margin-top: 20px; /* Jarak atas gambar */
-            border-radius: 8px; /* Sudut melingkar pada gambar */
-            display: none; /* Sembunyikan gambar secara default */
-        }
-
-        button {
-            padding: 10px 20px;
-            font-size: 18px;
-            background-color: #fff; /* Warna tombol putih */
-            color: black; /* Teks tombol berwarna hitam */
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
+            max-width: 100%;
+            height: auto;
             margin-top: 20px;
+            border-radius: 8px;
+            display: none;
         }
 
-        button:hover {
-            background-color: #e0e0e0; /* Warna tombol saat hover */
+        /* Membuat tombol berbentuk hati */
+        .heart-button {
+            position: relative;
+            display: inline-block;
+            width: 100px;
+            height: 90px;
+            background-color: red;
+            border-radius: 50px 50px 0 0;
+            transform: rotate(-45deg);
+            margin-top: 20px;
+            cursor: pointer;
         }
 
+        .heart-button::before, .heart-button::after {
+            content: "";
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: red;
+        }
+
+        .heart-button::before {
+            top: -50px;
+            left: 0;
+        }
+
+        .heart-button::after {
+            left: 50px;
+            top: 0;
+        }
+
+        .heart-button span {
+            position: absolute;
+            top: 60px;
+            left: 25px;
+            color: white;
+            font-size: 18px;
+            transform: rotate(45deg);
+        }
+
+        /* Tombol Instagram tetap */
         .link-button {
-            display: inline-block; /* Membuat tombol terlihat seperti tombol */
+            display: inline-block;
             padding: 10px 20px;
             font-size: 18px;
-            background-color: #FF4081; /* Warna tombol pink */
-            color: white; /* Teks tombol berwarna putih */
+            background-color: #FF4081;
+            color: white;
             border: none;
             border-radius: 5px;
-            text-decoration: none; /* Menghilangkan garis bawah */
+            text-decoration: none;
             margin-top: 20px;
         }
 
         .link-button:hover {
-            background-color: #e91e63; /* Warna tombol saat hover */
+            background-color: #e91e63;
         }
     </style>
 </head>
@@ -93,8 +120,10 @@
     <p>semangat terussss Sayanggg kuuu</p>
     <p>love youuu banyak banyak sayang kuu maaf yaaa kalau alayy heheheheh gak jelas banget emang anak nyaaa</p>
 
-    <!-- Tombol untuk menampilkan gambar dan teks -->
-    <button id="showButton">TEKAN!!</button>
+    <!-- Tombol untuk menampilkan gambar dan teks berbentuk hati -->
+    <div class="heart-button" id="showButton">
+        <span>TEKAN!</span>
+    </div>
     
     <!-- Teks yang muncul setelah tombol ditekan -->
     <p id="message" style="display: none;">siapaa ini yaaa</p>
