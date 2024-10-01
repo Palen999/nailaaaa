@@ -55,12 +55,12 @@
             display: none;
         }
 
-        /* Membuat tombol berbentuk hati */
+        /* Tombol berbentuk hati yang diperkecil */
         .heart-button {
             position: relative;
             display: inline-block;
-            width: 100px;
-            height: 90px;
+            width: 50px;
+            height: 45px;
             background-color: red;
             border-radius: 50px 50px 0 0;
             transform: rotate(-45deg);
@@ -71,29 +71,20 @@
         .heart-button::before, .heart-button::after {
             content: "";
             position: absolute;
-            width: 100px;
-            height: 100px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
             background-color: red;
         }
 
         .heart-button::before {
-            top: -50px;
+            top: -25px;
             left: 0;
         }
 
         .heart-button::after {
-            left: 50px;
-            top: 0;
-        }
-
-        .heart-button span {
-            position: absolute;
-            top: 60px;
             left: 25px;
-            color: white;
-            font-size: 18px;
-            transform: rotate(45deg);
+            top: 0;
         }
 
         /* Tombol Instagram tetap */
@@ -121,9 +112,7 @@
     <p>love youuu banyak banyak sayang kuu maaf yaaa kalau alayy heheheheh gak jelas banget emang anak nyaaa</p>
 
     <!-- Tombol untuk menampilkan gambar dan teks berbentuk hati -->
-    <div class="heart-button" id="showButton">
-        <span>TEKAN!</span>
-    </div>
+    <div class="heart-button" id="showButton"></div>
     
     <!-- Teks yang muncul setelah tombol ditekan -->
     <p id="message" style="display: none;">siapaa ini yaaa</p>
@@ -137,7 +126,7 @@
     <script>
         // Menangani klik tombol
         document.getElementById('showButton').onclick = function() {
-            document.getElementById('message').style.display = 'block'; // Tampilkan pesan "Pencet"
+            document.getElementById('message').style.display = 'block'; // Tampilkan pesan
             document.getElementById('nailaImage').style.display = 'block'; // Tampilkan gambar
         };
     </script>
