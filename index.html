@@ -10,7 +10,7 @@
             background-image: url('bg.jpg'); /* Mengganti background dengan gambar */
             background-size: cover; /* Memastikan background menutupi seluruh layar */
             background-position: center;
-            color: #000; /* Mengganti warna font menjadi hitam */
+            color: #fff; /* Mengganti warna font menjadi putih */
             text-align: center;
             padding: 50px;
         }
@@ -45,7 +45,7 @@
 
         marquee {
             font-size: 30px;
-            color: #000; /* Mengganti warna font menjadi hitam */
+            color: #fff; /* Mengganti warna font menjadi putih */
             margin-top: 30px;
         }
 
@@ -58,7 +58,7 @@
         }
 
         button {
-            padding: 10px 20px;
+            padding: 10px;
             font-size: 18px;
             background-color: #fff;
             color: black;
@@ -72,21 +72,28 @@
             background-color: #e0e0e0;
         }
 
-        .link-button {
+        .icon-button {
             display: inline-block;
-            padding: 10px 20px;
-            font-size: 18px;
-            background-color: #FF4081;
-            color: white;
+            width: 100px; /* Lebar tombol persegi */
+            height: 100px; /* Tinggi tombol persegi */
+            background-color: transparent; /* Membuat tombol transparan */
             border: none;
-            border-radius: 5px;
-            text-decoration: none;
-            margin-top: 20px;
+            cursor: pointer;
+            margin: 20px; /* Jarak antar tombol */
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Memberikan efek bayangan pada tombol */
+            border-radius: 10px; /* Sudut melingkar pada tombol */
         }
 
-        .link-button:hover {
-            background-color: #e91e63;
+        .icon-button img {
+            width: 80%; /* Ukuran logo */
+            height: 80%; /* Ukuran logo */
+            position: absolute; /* Memposisikan logo di tengah tombol */
+            top: 50%; /* Menempatkan logo di tengah secara vertikal */
+            left: 50%; /* Menempatkan logo di tengah secara horizontal */
+            transform: translate(-50%, -50%); /* Menggeser logo ke tengah */
         }
+
     </style>
 </head>
 <body>
@@ -105,7 +112,14 @@
     <img id="nailaImage" src="nai.jpg" alt="Si Cantik" />
 
     <!-- Tombol untuk mengarah ke Instagram -->
-    <a href="https://www.instagram.com/p/C_8QPEQzeF8cYdcIsSEKhJdo-_CIW5oOX_Z3m40/?igsh=b3A3Zm5uZzFhb3lv" class="link-button" target="_blank">Kunjungi IG</a>
+    <button class="icon-button" onclick="window.open('https://www.instagram.com/', '_blank')">
+        <img src="ig.jpg" alt="Instagram Logo">
+    </button>
+
+    <!-- Tombol untuk SP -->
+    <button class="icon-button" onclick="window.open('https://open.spotify.com/playlist/0ceNrnglNjh4vHr4B8duJJ?si=AotlKU44SO6x5F3pxRilsw&pi=LixyKOKxS0GCl', '_blank')">
+        <img src="sp.jpg" alt="SP Logo">
+    </button>
 
     <!-- Menambahkan audio -->
     <audio id="myMusic" autoplay loop>
