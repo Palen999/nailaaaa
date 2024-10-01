@@ -6,15 +6,17 @@
     <title>Bucin Alert</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #000;
+            font-family: 'Comic Sans MS', cursive, sans-serif; /* Menggunakan font yang lebih menarik */
+            background-image: url('yey.jpg'); /* Mengganti background dengan gambar */
+            background-size: cover; /* Memastikan background menutupi seluruh layar */
+            background-position: center;
             color: #fff;
             text-align: center;
             padding: 50px;
         }
 
         h1 {
-            font-size: 30px; /* Ukuran teks dibuat lebih kecil */
+            font-size: 30px;
             text-transform: uppercase;
             animation: blink 1.5s infinite;
         }
@@ -48,18 +50,18 @@
         }
 
         img {
-            max-width: 100%; /* Gambar responsif */
-            height: auto; /* Memastikan aspek rasio tetap */
-            margin-top: 20px; /* Jarak atas gambar */
-            border-radius: 8px; /* Sudut melingkar pada gambar */
-            display: none; /* Sembunyikan gambar secara default */
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+            border-radius: 8px;
+            display: none;
         }
 
         button {
             padding: 10px 20px;
             font-size: 18px;
-            background-color: #fff; /* Warna tombol putih */
-            color: black; /* Teks tombol berwarna hitam */
+            background-color: #fff;
+            color: black;
             border: none;
             border-radius: 5px;
             cursor: pointer;
@@ -67,23 +69,29 @@
         }
 
         button:hover {
-            background-color: #e0e0e0; /* Warna tombol saat hover */
+            background-color: #e0e0e0;
         }
 
         .link-button {
-            display: inline-block; /* Membuat tombol terlihat seperti tombol */
+            display: inline-block;
             padding: 10px 20px;
             font-size: 18px;
-            background-color: #FF4081; /* Warna tombol pink */
-            color: white; /* Teks tombol berwarna putih */
+            background-color: #FF4081;
+            color: white;
             border: none;
             border-radius: 5px;
-            text-decoration: none; /* Menghilangkan garis bawah */
+            text-decoration: none;
             margin-top: 20px;
         }
 
         .link-button:hover {
-            background-color: #e91e63; /* Warna tombol saat hover */
+            background-color: #e91e63;
+        }
+
+        #gameCanvas {
+            display: none;
+            margin-top: 20px;
+            border: 2px solid white;
         }
     </style>
 </head>
@@ -105,11 +113,52 @@
     <!-- Tombol untuk mengarah ke Instagram -->
     <a href="https://www.instagram.com/p/C_8QPEQzeF8cYdcIsSEKhJdo-_CIW5oOX_Z3m40/?igsh=b3A3Zm5uZzFhb3lv" class="link-button" target="_blank">Kunjungi IG</a>
 
+    <!-- Tombol untuk memulai game -->
+    <button id="gameButton">Main Game!</button>
+
+    <!-- Canvas untuk game sederhana -->
+    <canvas id="gameCanvas" width="400" height="400"></canvas>
+
     <script>
-        // Menangani klik tombol
+        // Menangani klik tombol "TEKAN!!"
         document.getElementById('showButton').onclick = function() {
-            document.getElementById('message').style.display = 'block'; // Tampilkan pesan "Pencet"
-            document.getElementById('nailaImage').style.display = 'block'; // Tampilkan gambar
+            document.getElementById('message').style.display = 'block';
+            document.getElementById('nailaImage').style.display = 'block';
+        };
+
+        // Menangani klik tombol "Main Game!"
+        document.getElementById('gameButton').onclick = function() {
+            var canvas = document.getElementById('gameCanvas');
+            var ctx = canvas.getContext('2d');
+            canvas.style.display = 'block';
+
+            // Membuat game sederhana (game bola memantul)
+            var x = canvas.width / 2;
+            var y = canvas.height / 2;
+            var dx = 2;
+            var dy = 2;
+            var ballRadius = 10;
+
+            function drawBall() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.beginPath();
+                ctx.arc(x, y, ballRadius, 0, Math.PI * 2);
+                ctx.fillStyle = "#FF4081";
+                ctx.fill();
+                ctx.closePath();
+
+                if (x + dx > canvas.width - ballRadius || x - ballRadius < 0) {
+                    dx = -dx;
+                }
+                if (y + dy > canvas.height - ballRadius || y - ballRadius < 0) {
+                    dy = -dy;
+                }
+
+                x += dx;
+                y += dy;
+            }
+
+            setInterval(drawBall, 10);
         };
     </script>
 
