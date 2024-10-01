@@ -27,17 +27,6 @@
             100% { opacity: 1; }
         }
 
-        .heart {
-            font-size: 100px;
-            color: red;
-            animation: heartbeat 1s infinite;
-        }
-
-        @keyframes heartbeat {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.2); }
-        }
-
         p {
             font-size: 24px;
             margin-top: 20px;
@@ -49,51 +38,30 @@
             margin-top: 30px;
         }
 
-        img {
-            max-width: 100%;
-            height: auto;
-            margin-top: 20px;
-            border-radius: 8px;
-            display: none;
-        }
-
         button {
             padding: 10px;
             font-size: 18px;
-            background-color: #fff;
-            color: black;
             border: none;
-            border-radius: 5px;
+            border-radius: 10px; /* Sudut melingkar pada tombol */
             cursor: pointer;
-            margin-top: 20px;
+            margin: 20px; /* Jarak antar tombol */
+            width: 120px; /* Lebar tombol */
+            height: 120px; /* Tinggi tombol */
+        }
+
+        .ig-button {
+            background-color: red; /* Warna merah untuk IG */
+            color: white; /* Warna teks putih */
+        }
+
+        .spotify-button {
+            background-color: green; /* Warna hijau untuk Spotify */
+            color: white; /* Warna teks putih */
         }
 
         button:hover {
-            background-color: #e0e0e0;
+            opacity: 0.9; /* Efek saat hover */
         }
-
-        .icon-button {
-            display: inline-block;
-            width: 100px; /* Lebar tombol persegi */
-            height: 100px; /* Tinggi tombol persegi */
-            background-color: transparent; /* Membuat tombol transparan */
-            border: none;
-            cursor: pointer;
-            margin: 20px; /* Jarak antar tombol */
-            position: relative;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Memberikan efek bayangan pada tombol */
-            border-radius: 10px; /* Sudut melingkar pada tombol */
-        }
-
-        .icon-button img {
-            width: 80%; /* Ukuran logo */
-            height: 80%; /* Ukuran logo */
-            position: absolute; /* Memposisikan logo di tengah tombol */
-            top: 50%; /* Menempatkan logo di tengah secara vertikal */
-            left: 50%; /* Menempatkan logo di tengah secara horizontal */
-            transform: translate(-50%, -50%); /* Menggeser logo ke tengah */
-        }
-
     </style>
 </head>
 <body>
@@ -112,17 +80,16 @@
     <img id="nailaImage" src="nai.jpg" alt="Si Cantik" />
 
     <!-- Tombol untuk mengarah ke Instagram -->
-    <button class="icon-button" onclick="window.open('https://www.instagram.com/', '_blank')">
-        <img src="ig.jpg" alt="Instagram Logo">
-    </button>
+    <button class="ig-button" onclick="window.open('https://www.instagram.com/', '_blank')">IG</button>
 
-    <!-- Tombol untuk SP -->
-    <button class="icon-button" onclick="window.open('https://open.spotify.com/playlist/0ceNrnglNjh4vHr4B8duJJ?si=AotlKU44SO6x5F3pxRilsw&pi=LixyKOKxS0GCl', '_blank')">
-        <img src="sp.jpg" alt="SP Logo">
-    </button>
+    <!-- Tombol untuk Spotify -->
+    <button class="spotify-button" onclick="window.open('https://open.spotify.com/playlist/0ceNrnglNjh4vHr4B8duJJ?si=AotlKU44SO6x5F3pxRilsw&pi=LixyKOKxS0GCl', '_blank')">Spotify</button>
+
+    <!-- Tombol untuk memutar musik -->
+    <button id="playMusicButton">Putar Musik</button>
 
     <!-- Menambahkan audio -->
-    <audio id="myMusic" autoplay loop>
+    <audio id="myMusic" loop>
         <source src="https://github.com/Palen999/nailaaaa/raw/main/musik.mp3" type="audio/mpeg">
         Browser Anda tidak mendukung pemutar audio.
     </audio>
@@ -132,6 +99,12 @@
         document.getElementById('showButton').onclick = function() {
             document.getElementById('message').style.display = 'block';
             document.getElementById('nailaImage').style.display = 'block';
+        };
+
+        // Menangani klik tombol "Putar Musik"
+        document.getElementById('playMusicButton').onclick = function() {
+            var audio = document.getElementById('myMusic');
+            audio.play(); // Memutar musik saat tombol ditekan
         };
     </script>
 
