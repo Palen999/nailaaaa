@@ -10,7 +10,7 @@
             background-image: url('yey.jpg'); /* Mengganti background dengan gambar */
             background-size: cover; /* Memastikan background menutupi seluruh layar */
             background-position: center;
-            color: #fff;
+            color: #000; /* Mengganti warna font menjadi hitam */
             text-align: center;
             padding: 50px;
         }
@@ -45,7 +45,7 @@
 
         marquee {
             font-size: 30px;
-            color: #fff;
+            color: #000; /* Mengganti warna font menjadi hitam */
             margin-top: 30px;
         }
 
@@ -87,12 +87,6 @@
         .link-button:hover {
             background-color: #e91e63;
         }
-
-        #gameCanvas {
-            display: none;
-            margin-top: 20px;
-            border: 2px solid white;
-        }
     </style>
 </head>
 <body>
@@ -113,52 +107,11 @@
     <!-- Tombol untuk mengarah ke Instagram -->
     <a href="https://www.instagram.com/p/C_8QPEQzeF8cYdcIsSEKhJdo-_CIW5oOX_Z3m40/?igsh=b3A3Zm5uZzFhb3lv" class="link-button" target="_blank">Kunjungi IG</a>
 
-    <!-- Tombol untuk memulai game -->
-    <button id="gameButton">Main Game!</button>
-
-    <!-- Canvas untuk game sederhana -->
-    <canvas id="gameCanvas" width="400" height="400"></canvas>
-
     <script>
         // Menangani klik tombol "TEKAN!!"
         document.getElementById('showButton').onclick = function() {
             document.getElementById('message').style.display = 'block';
             document.getElementById('nailaImage').style.display = 'block';
-        };
-
-        // Menangani klik tombol "Main Game!"
-        document.getElementById('gameButton').onclick = function() {
-            var canvas = document.getElementById('gameCanvas');
-            var ctx = canvas.getContext('2d');
-            canvas.style.display = 'block';
-
-            // Membuat game sederhana (game bola memantul)
-            var x = canvas.width / 2;
-            var y = canvas.height / 2;
-            var dx = 2;
-            var dy = 2;
-            var ballRadius = 10;
-
-            function drawBall() {
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                ctx.beginPath();
-                ctx.arc(x, y, ballRadius, 0, Math.PI * 2);
-                ctx.fillStyle = "#FF4081";
-                ctx.fill();
-                ctx.closePath();
-
-                if (x + dx > canvas.width - ballRadius || x - ballRadius < 0) {
-                    dx = -dx;
-                }
-                if (y + dy > canvas.height - ballRadius || y - ballRadius < 0) {
-                    dy = -dy;
-                }
-
-                x += dx;
-                y += dy;
-            }
-
-            setInterval(drawBall, 10);
         };
     </script>
 
